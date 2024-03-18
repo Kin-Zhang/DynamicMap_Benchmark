@@ -36,10 +36,10 @@ def parse_calibration(filename):
     calib[key] = pose
 
   calib_file.close()
-
+  # print(f"calib: ", calib["Tr"])
   return calib
 
-def parse_poses(filename, calibration):
+def parse_poses(filename, calibration = {"Tr": np.eye(4)}):
   """ read poses file with per-scan poses from given filename
 
       Returns

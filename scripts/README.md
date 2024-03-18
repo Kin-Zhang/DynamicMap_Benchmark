@@ -80,6 +80,8 @@ We provided scripts to extract data from KITTI and Argoverse 2.0. Importantly, y
 │   │   ├── ....
 ```
 
+Label tutorial: [Label data](./py/README.md#label-data)
+
 ### Custom Dataset
 
 For our custom dataset, we normally record the pointcloud with rosbag, and then running some slam methods to get the pose. If you don't have clue to use the slam package, check [simple_ndt_slam](https://github.com/Kin-Zhang/simple_ndt_slam) repo the only dependence you need in the repo is ROS. If you don't have ROS/Ubuntu, you can directly use the `docker` to run.
@@ -217,6 +219,8 @@ python3 scripts/extract_argoverse2.py
 
 
 ## Other Tools
+
+- [Kin-Zhang/point_labeler](https://github.com/Kin-Zhang/point_labeler), my second version tool to label the point cloud data. 
 
 - [CloudCompare](https://www.danielgm.net/cc/) view pcd tools and make animation video.
     ```bash

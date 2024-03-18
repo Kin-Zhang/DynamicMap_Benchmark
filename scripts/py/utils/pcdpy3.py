@@ -20,9 +20,8 @@ import copy
 import numpy as np
 
 def load_pcd(path):
-    data = PointCloud.from_path(path)
-    data.xyzi2np()
-    return data
+    return PointCloud.from_path(path)
+
 
 def save_pcd(path, data: np.array, pos=np.array([0,0,0,1,0,0,0]), rgb: np.array = None):
     # need be data: [N,3] or [N,4] [x,y,z,intensity]
@@ -85,7 +84,7 @@ class PointCloud(object):
         self.metadata_keys = metadata.keys()
         self.__dict__.update(metadata)
         self.pc_data = pc_data
-
+        self.xyzi2np()
     def get_metadata(self):
         """ returns copy of metadata """
         metadata = {}
@@ -278,3 +277,24 @@ def build_ascii_fmtstr(pc):
         else:
             raise ValueError("don't know about type %s" % t)
     return fmtstr
+
+
+# Other functions --------------------------------------------------------
+try:
+    from scipy.spatial.transform import Rotation as R
+except ImportError:
+    warnings.warn("scipy not found, some functions may not work")
+
+def xyzqwxyz_to_matrix(xyzqwxyz: list):
+    """
+    input: xyzqwxyz: [x, y, z, qx, qy, qz, qw] a list of 7 elements
+    """
+    rotation = R.from_quat([xyzqwxyz[4], xyzqwxyz[5], xyzqwxyz[6], xyzqwxyz[3]]).as_matrix()
+    pose = np.eye(4).astype(np.float64)
+    pose[:3, :3] = rotation
+    pose[:3, 3] = xyzqwxyz[:3]
+    return pose
+
+def filterOutRange(points: np.array, max_range=80, min_range=-1):
+    pass
+    

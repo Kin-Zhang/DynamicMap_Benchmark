@@ -35,8 +35,12 @@ Here is a preview of the readme in codes. Task detects dynamic points in maps an
 
 Feel free to pull a request if you want to add more methods or datasets. Welcome! We will try our best to update methods and datasets in this benchmark. Please give us a star 🌟 and cite our work 📖 if you find this useful for your research. Thanks!
 
+- **2024/03/25** Release [our dynamic benchmark format tool to label](https://github.com/Kin-Zhang/point_labeler), big thanks to [@jbehley](https://github.com/jbehley) for his [semanticKITTI label tool](https://github.com/jbehley/point_labeler). Try to label your data! and contribute to the community. Follow [this README]().
+  
 - **2024/03/18** Added the first data-driven method [DeFlow](https://github.com/KTH-RPL/DeFlow/tree/feature/dynamicmap) into our benchmark. Create [BeautyMap](https://github.com/HKUSTGZ-IADC/BeautyMap) repo (wait for public and open-source after review).
+
 - **2024/03/08** [DUFOMap](https://arxiv.org/abs/2403.01449) is public now. Code **will be added** soon with dynablox benchmark adaptation also. **Fix statements** on our ITSC2023 paper: KITTI sequences pose are also from SemanticKITTI which used SuMa. In the DUFOMap paper Section V-C, Table III, we present the dynamic removal result on different pose sources. Check discussion in [DUFOMap](https://arxiv.org/abs/2403.01449) paper if you are interested.
+
 - **2023/06/13** The [benchmark paper](https://arxiv.org/abs/2307.07260) Accepted by ITSC 2023 and release five methods (Octomap, Octomap w GF, ERASOR, Removert) and three datasets (01, 05, av2, semindoor) in [benchmark paper](https://arxiv.org/abs/2307.07260).
 
 ## Methods:

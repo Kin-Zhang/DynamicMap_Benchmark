@@ -1,0 +1,4 @@
+av2
+fire
+numpy
+tqdm
