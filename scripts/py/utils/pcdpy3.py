@@ -294,7 +294,3 @@ def xyzqwxyz_to_matrix(xyzqwxyz: list):
     pose[:3, :3] = rotation
     pose[:3, 3] = xyzqwxyz[:3]
     return pose
-
-def filterOutRange(points: np.array, max_range=80, min_range=-1):
-    pass
-    
